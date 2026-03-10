@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأدعية المستجابة</title>
+    <style>
+        body {
+            background-color: #1a110a; /* خلفية داكنة جداً */
+            color: #e2b37b; /* لون الخط البيج الذهبي */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* حاوية العنوان */
+        .header-section {
+            width: 100%;
+            max-width: 500px;
+            background-color: #2c1e14;
+            border: 2px solid #917044;
+            border-radius: 50px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #e2b37b;
+        }
+
+        /* زر الرجوع */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 25px;
+            background-color: transparent;
+            color: #917044;
+            border: 1px solid #917044;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background-color: #917044;
+            color: #1a110a;
+        }
+
+        /* حاوية الأدعية */
+        .container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* كارت الدعاء */
+        .dua-card {
+            background-color: #2c1e14;
+            border: 1px solid #917044;
+            border-radius: 25px;
+            padding: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+            line-height: 1.8;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+
+        .dua-card:hover {
+            transform: scale(1.02);
+            border-color: #e2b37b;
+        }
+
+        /* أيقونة بسيطة بجانب الدعاء */
+        .dua-card::before {
+            content: "✨";
+            display: block;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-btn">⬅ الرجوع للرئيسية</a>
+
+    <div class="header-section">
+        <h1>أدعية من الكتاب والسنة</h1>
+    </div>
+
+    <div class="container" id="duasContainer">
+        </div>
+
+    <script>
+        const duas = [
+            "اللهم صلِّ على محمدٍ وعلى آل محمدٍ كما صليتَ على آل إبراهيم؛ إنك حميد مجيد",
+            "اللهم إني ظلمتُ نفسي ظلمًا كثيرًا، ولا يغفر الذنوب إلا أنت؛ فاغفر لي مغفرةً من عندك وارحمني",
+            "اللهم إني أعوذ بك من عذاب القبر، ومن عذاب النار، ومن فتنة المحيا والممات، ومن فتنة المسيح الدجال",
+            "اللهم إنك عفوٌّ تحب العفو؛ فاعفُ عني",
+            "اللهم أنت ربي لا إله إلا أنت، خلقتَني وأنا عبدك، وأنا على عهدك ووعدك ما استطعت",
+            "اللهم إني أعوذ بك من الهمِّ والحزَن، والعجز والكسل، والبخل والجبن، وضَلَع الدَّين، وغلَبة الرجال",
+            "اللهم اغفِرْ لي ما قدمتُ وما أخرت، وما أسررت وما أعلنت، وما أنت أعلم به مني",
+            "ربِّ، قِني عذابَك، يوم تبعثُ عبادَك",
+            "اللهم أصلِحْ لي دِيني الذي هو عصمة أمري، وأصلح لي دنياي التي فيها معاشي"
+        ];
+
+        const container = document.getElementById('duasContainer');
+        
+        duas.forEach(dua => {
+            const div = document.createElement('div');
+            div.className = 'dua-card';
+            div.textContent = dua;
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>
